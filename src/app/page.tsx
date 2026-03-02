@@ -6,6 +6,7 @@ import { ScribbleUnderline } from '@/components/ScribbleUnderline'
 import { KentePattern } from '@/components/KentePattern'
 import { AdinkraBackground } from '@/components/AdinkraBackground'
 
+// Main page here
 const dataScienceProjects = [
   {
     title: "Billboard Hit Prediction Tool",
