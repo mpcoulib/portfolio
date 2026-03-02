@@ -94,7 +94,7 @@ export default function Home() {
             <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
             <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#27c93f' }} />
             <span className="text-xs font-mono ml-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              portfolio-ten-lake-62.vercel.app
+              massafolio.dev
             </span>
           </div>
           <div className="flex gap-2">
@@ -108,7 +108,7 @@ export default function Home() {
               </svg>
               github ↗
             </a>
-            <a href="https://portfolio-ten-lake-62.vercel.app/" target="_blank" rel="noopener noreferrer"
+            <a href="https://massafolio.dev" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
               style={{ border: '1.5px solid #a8d96e', color: '#a8d96e', backgroundColor: 'transparent' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#a8d96e'; (e.currentTarget as HTMLAnchorElement).style.color = '#1a202c' }}

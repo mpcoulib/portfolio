@@ -26,7 +26,7 @@ export function RetroWindow({ title, children, delay = 0 }: RetroWindowProps) {
             <div className="w-3 h-3 border border-[#1a202c]" />
           </div>
           <span className="text-xs uppercase tracking-wide"
-            style={{ fontFamily: 'Courier New, monospace', fontWeight: 700 }}>
+            style={{ fontFamily: 'Courier New, monospace', fontWeight: 700, color: '#1a202c' }}>
             {title}
           </span>
         </div>
