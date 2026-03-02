@@ -81,7 +81,44 @@ const webDevProjects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-x-hidden" style={{ backgroundColor: '#f5f5f0' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#d8d8d0', padding: '16px' }}>
+
+      {/* Browser frame wrapper */}
+      <div style={{ border: '2px solid #1a202c', boxShadow: '8px 8px 0px rgba(0,0,0,0.2)', maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Browser chrome */}
+        <div className="flex items-center justify-between px-4 py-2.5 sticky top-0 z-50" style={{ backgroundColor: '#1a202c' }}>
+          <div className="flex items-center gap-3">
+            <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#ff5f56' }} />
+            <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
+            <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#27c93f' }} />
+            <span className="text-xs font-mono ml-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              portfolio-ten-lake-62.vercel.app
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <a href="https://github.com/mpcoulib/portfolio" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
+              style={{ border: '1.5px solid rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.7)', backgroundColor: 'transparent' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = '#fff'; (e.currentTarget as HTMLAnchorElement).style.color = '#fff' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.3)'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.7)' }}>
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                <path d="M 7 1 C 3.7 1 1 3.7 1 7 C 1 9.6 2.7 11.9 5.1 12.7 C 5.4 12.8 5.5 12.6 5.5 12.4 L 5.5 11.3 C 3.9 11.6 3.5 10.5 3.5 10.5 C 3.2 9.8 2.8 9.6 2.8 9.6 C 2.2 9.2 2.8 9.2 2.8 9.2 C 3.4 9.3 3.8 9.8 3.8 9.8 C 4.4 10.8 5.4 10.5 5.7 10.3 C 5.8 9.9 5.9 9.6 6.1 9.5 C 4.4 9.3 2.6 8.6 2.6 5.7 C 2.6 4.9 2.9 4.3 3.3 3.8 C 3.3 3.6 3 2.9 3.5 2 C 3.5 2 4.1 1.8 5.5 2.7 C 6.1 2.5 6.8 2.4 7.5 2.4 C 8.2 2.4 8.9 2.5 9.5 2.7 C 10.9 1.8 11.5 2 11.5 2 C 12 2.9 11.7 3.6 11.7 3.8 C 12.1 4.3 12.4 4.9 12.4 5.7 C 12.4 8.6 10.6 9.3 8.9 9.5 C 9.1 9.7 9.3 10.1 9.3 10.7 L 9.3 12.4 C 9.3 12.6 9.4 12.8 9.7 12.7 C 12.1 11.9 13.8 9.6 13.8 7 C 14 3.7 11.3 1 7 1 Z" fill="currentColor"/>
+              </svg>
+              github ↗
+            </a>
+            <a href="https://portfolio-ten-lake-62.vercel.app/" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
+              style={{ border: '1.5px solid #a8d96e', color: '#a8d96e', backgroundColor: 'transparent' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#a8d96e'; (e.currentTarget as HTMLAnchorElement).style.color = '#1a202c' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = '#a8d96e' }}>
+              live ↗
+            </a>
+          </div>
+        </div>
+
+        {/* Page content */}
+        <div className="relative overflow-x-hidden" style={{ backgroundColor: '#f5f5f0' }}>
       <KentePattern />
       <AdinkraBackground />
 
@@ -248,16 +285,17 @@ export default function Home() {
           <div className="border-2 border-[#1a202c] p-4 font-mono text-xs"
             style={{ backgroundColor: '#000', color: '#0f0', boxShadow: '4px 4px 0px rgba(0,0,0,0.3)' }}>
             <div className="mb-1">
-              <span className="opacity-60">massa@portfolio:~$</span> cat README.txt
+              <span className="opacity-60">massa@portfolio:~$</span> whoami
             </div>
             <div className="text-gray-400 leading-relaxed">
-              {'>'} Designed with intentional imperfection<br />
-              {'>'} Built with Next.js + Motion<br />
-              {'>'} Inspired by notebooks & System 7<br />
-              {'>'} Source:{' '}
-              <a href="https://github.com/mpcoulib/portfolio" target="_blank" rel="noopener noreferrer"
+              {'>'} <span className="text-white">Massa Coulibaly</span> — Full-Stack Engineer<br />
+              {'>'} Ex CTO @ Afya · UC Berkeley MIMS &apos;25<br />
+              {'>'} Built software for clinics in Ghana, ML tools for music, and more<br />
+              {'>'} Status: <span className="text-[#a8d96e]">open</span> · targeting FDE / Full-Stack roles<br />
+              {'>'} Contact:{' '}
+              <a href="mailto:massacoulibaly@berkeley.edu"
                 className="text-[#a8d96e] hover:underline">
-                github.com/mpcoulib/portfolio ↗
+                massacoulibaly@berkeley.edu
               </a><br />
               {'>'} <span className="text-[#a8d96e]">█</span>
             </div>
@@ -271,6 +309,8 @@ export default function Home() {
         <circle cx="30" cy="30" r="25" fill="none" stroke="#1a202c" strokeWidth="2" />
         <path d="M 15 30 L 45 30" stroke="#1a202c" strokeWidth="2" />
       </svg>
+        </div>
+      </div>
     </div>
   )
 }
