@@ -160,10 +160,11 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
+{/* New line here */}
               <div className="border-t-2 border-dashed border-gray-300 pt-3 mt-4">
                 <div className="grid grid-cols-2 gap-2 text-xs font-mono">
                   <div className="flex justify-between">
+
                     <span className="text-gray-500">School:</span>
                     <span className="text-gray-700">UC Berkeley MIMS</span>
                   </div>
