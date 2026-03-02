@@ -150,6 +150,8 @@ export default function Home() {
                     className="text-xs font-mono text-gray-500 hover:text-[#a8d96e] transition-colors underline decoration-dotted">linkedin</a>
                   <a href="https://www.ischool.berkeley.edu/people/massa-coulibaly" target="_blank" rel="noopener noreferrer"
                     className="text-xs font-mono text-gray-500 hover:text-[#a8d96e] transition-colors underline decoration-dotted">berkeley</a>
+                  <a href="https://github.com/mpcoulib/portfolio" target="_blank" rel="noopener noreferrer"
+                    className="text-xs font-mono text-gray-500 hover:text-[#a8d96e] transition-colors underline decoration-dotted">this site ↗</a>
                 </div>
               </div>
             </div>
@@ -252,6 +254,11 @@ export default function Home() {
               {'>'} Designed with intentional imperfection<br />
               {'>'} Built with Next.js + Motion<br />
               {'>'} Inspired by notebooks & System 7<br />
+              {'>'} Source:{' '}
+              <a href="https://github.com/mpcoulib/portfolio" target="_blank" rel="noopener noreferrer"
+                className="text-[#a8d96e] hover:underline">
+                github.com/mpcoulib/portfolio ↗
+              </a><br />
               {'>'} <span className="text-[#a8d96e]">█</span>
             </div>
           </div>
