@@ -216,42 +216,8 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Data Science section */}
-        <section className="mb-20 ml-24 relative">
-          <ScribbleUnderline delay={0.2} icon={
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
-              <path d="M 4 24 L 4 4 M 4 24 L 24 24" stroke="#1a202c" strokeWidth="1.5" strokeLinecap="round" />
-              <circle cx="7" cy="20" r="1.5" fill="#1a202c" />
-              <circle cx="11" cy="17" r="1.5" fill="#1a202c" />
-              <circle cx="15" cy="19" r="1.5" fill="#1a202c" />
-              <circle cx="19" cy="11" r="1.5" fill="#1a202c" />
-              <circle cx="22" cy="8" r="1.5" fill="#1a202c" />
-              <path d="M 6 21 Q 14 13, 23 7" stroke="#a8d96e" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          }>Data Science & AI</ScribbleUnderline>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            className="absolute -left-16 mt-2 text-xs text-gray-400 font-mono transform -rotate-90 origin-left">
-            // ML/AI
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {dataScienceProjects.map((project, index) => (
-              <SketchBox key={index} title={project.title} description={project.description}
-                githubUrl={project.githubUrl} techStack={project.techStack}
-                highlights={project.highlights} delay={0.1 * index} />
-            ))}
-          </div>
-        </section>
 
-        {/* Section divider */}
-        <motion.div className="my-16 flex items-center gap-4 ml-24"
-          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}>
-          <svg width="60" height="40" className="opacity-30 flex-shrink-0">
-            <path d="M 5 20 L 25 20 L 25 10 L 45 30 L 25 30 L 25 20" stroke="#1a202c" strokeWidth="2" fill="none" />
-          </svg>
-          <div className="flex-1 h-0.5" style={{
-            background: 'repeating-linear-gradient(90deg, #999 0px, #999 8px, transparent 8px, transparent 16px)'
-          }} />
-        </motion.div>
+     
 
         {/* Web Dev section */}
         <section className="mb-20 ml-24 relative">
@@ -277,6 +243,42 @@ export default function Home() {
               <SketchBox key={index} title={project.title} description={project.description}
                 githubUrl={project.githubUrl} liveUrl={(project as { liveUrl?: string }).liveUrl}
                 techStack={project.techStack} highlights={project.highlights} delay={0.1 * index} />
+            ))}
+          </div>
+        </section>
+   {/* Section divider */}
+   <motion.div className="my-16 flex items-center gap-4 ml-24"
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}>
+          <svg width="60" height="40" className="opacity-30 flex-shrink-0">
+            <path d="M 5 20 L 25 20 L 25 10 L 45 30 L 25 30 L 25 20" stroke="#1a202c" strokeWidth="2" fill="none" />
+          </svg>
+          <div className="flex-1 h-0.5" style={{
+            background: 'repeating-linear-gradient(90deg, #999 0px, #999 8px, transparent 8px, transparent 16px)'
+          }} />
+        </motion.div>
+
+        {/* Data Science section */}
+        <section className="mb-20 ml-24 relative">
+          <ScribbleUnderline delay={0.2} icon={
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
+              <path d="M 4 24 L 4 4 M 4 24 L 24 24" stroke="#1a202c" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="7" cy="20" r="1.5" fill="#1a202c" />
+              <circle cx="11" cy="17" r="1.5" fill="#1a202c" />
+              <circle cx="15" cy="19" r="1.5" fill="#1a202c" />
+              <circle cx="19" cy="11" r="1.5" fill="#1a202c" />
+              <circle cx="22" cy="8" r="1.5" fill="#1a202c" />
+              <path d="M 6 21 Q 14 13, 23 7" stroke="#a8d96e" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          }>Data Science & AI</ScribbleUnderline>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="absolute -left-16 mt-2 text-xs text-gray-400 font-mono transform -rotate-90 origin-left">
+            // ML/AI
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {dataScienceProjects.map((project, index) => (
+              <SketchBox key={index} title={project.title} description={project.description}
+                githubUrl={project.githubUrl} techStack={project.techStack}
+                highlights={project.highlights} delay={0.1 * index} />
             ))}
           </div>
         </section>
