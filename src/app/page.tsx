@@ -290,10 +290,8 @@ export default function Home() {
               <span className="opacity-60">massa@portfolio:~$</span> whoami
             </div>
             <div className="text-gray-400 leading-relaxed">
-              {'>'} <span className="text-white">Massa Coulibaly</span> — Full-Stack Engineer<br />
-              {'>'} Ex CTO @ Afya · UC Berkeley MIMS &apos;25<br />
-              {'>'} Built software for clinics in Ghana, ML tools for music, and more<br />
-              {'>'} Status: <span className="text-[#a8d96e]">open</span> · targeting FDE / Full-Stack roles<br />
+              {'>'} <span className="text-white">Massa Coulibaly</span>, Full-Stack Engineer<br />
+              {'>'} Ex CTO @ Afya · UC Berkeley MIMS &apos;26<br />
               {'>'} Contact:{' '}
               <a href="mailto:massacoulibaly@berkeley.edu"
                 className="text-[#a8d96e] hover:underline">
