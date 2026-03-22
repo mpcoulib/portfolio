@@ -69,20 +69,21 @@ const webDevProjects = [
   },
   {
     title: "HIMS — Friends Eye Center",
-    description: "Built a Healthcare Information Management System for a clinic in Ghana, doubling revenue through full process digitalization.",
-    githubUrl: "https://github.com/mpcoulib/Projects",
-    techStack: ["Full-Stack Web", "Database Design", "Ghana 🇬🇭"],
+    description: "Built a Healthcare Information Management System for a clinic in Ghana on top of OpenEMR. Includes a data migration pipeline using Python and Pandas to move legacy Excel records into the new system.",
+    githubUrl: "https://github.com/mpcoulib/Friends_Eye_Center_data_migration",
+    techStack: ["Python", "Pandas", "SQL", "OpenEMR", "Ghana 🇬🇭"],
     highlights: [
-      "Replaced entirely paper-based workflows — patient records, billing, appointments",
-      "Reduced billing errors and patient wait times significantly post-deployment",
-      "Worked directly with clinic staff to iteratively design a system fitting their real constraints"
+      "Wrote SQL migration scripts via Pandas to transfer clinic data from Excel sheets into the new OpenEMR-based system",
+      "Clinic proposal and initial analysis included in the repo — shared with permission from Friends Eye Center",
+      "Replaced entirely paper-based workflows across three sites: patient records, billing, and appointments",
+      "System still in use 2+ years later; trained KNUST and Technical University of Tamale students to maintain it post-handoff"
     ]
   }
 ]
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#d8d8d0', padding: '16px' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#d8d8d0', padding: '8px' }}>
 
       {/* Browser frame wrapper */}
       <div style={{ border: '2px solid #1a202c', boxShadow: '8px 8px 0px rgba(0,0,0,0.2)', maxWidth: '1400px', margin: '0 auto' }}>
@@ -93,7 +94,7 @@ export default function Home() {
             <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#ff5f56' }} />
             <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
             <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#27c93f' }} />
-            <span className="text-xs font-mono ml-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <span className="hidden sm:inline text-xs font-mono ml-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
               massafolio.dev
             </span>
           </div>
@@ -125,7 +126,7 @@ export default function Home() {
 
 
       {/* Rotating doodle top-right */}
-      <motion.div className="fixed top-8 right-8 opacity-20 pointer-events-none"
+      <motion.div className="hidden sm:block fixed top-8 right-8 opacity-20 pointer-events-none"
         initial={{ rotate: 0 }} animate={{ rotate: [0, -5, 0, 5, 0] }}
         transition={{ duration: 20, repeat: Infinity }}>
         <svg width="80" height="80">
@@ -135,7 +136,7 @@ export default function Home() {
         </svg>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-12 py-16 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-12 py-16 relative z-10">
 
         {/* Hero */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
@@ -143,7 +144,7 @@ export default function Home() {
           <RetroWindow title="About This Engineer" delay={0.2}>
             <div className="space-y-4">
               <div>
-                <h1 className="text-5xl mb-3 relative inline-block"
+                <h1 className="text-3xl sm:text-5xl mb-3 relative inline-block"
                   style={{ fontFamily: 'Courier New, monospace', fontWeight: 700, letterSpacing: '-0.01em', color: '#1a202c' }}>
                   Massa Coulibaly
                   <svg className="absolute -bottom-1 left-0 w-full h-3">
@@ -163,7 +164,7 @@ export default function Home() {
               </div>
 {/* New line here */}
               <div className="border-t-2 border-dashed border-gray-300 pt-3 mt-4">
-                <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
                   <div className="flex justify-between">
 
                     <span className="text-gray-500">School:</span>
@@ -199,7 +200,7 @@ export default function Home() {
 
         {/* Sticky note */}
         <motion.div initial={{ opacity: 0, rotate: -2 }} animate={{ opacity: 1, rotate: -1 }}
-          transition={{ delay: 0.8 }} className="mb-16 ml-24 max-w-md">
+          transition={{ delay: 0.8 }} className="mb-16 ml-0 sm:ml-24 max-w-md">
           <div className="bg-yellow-50/80 p-4 relative"
             style={{ border: '1px solid rgba(0,0,0,0.1)', boxShadow: '2px 2px 8px rgba(0,0,0,0.1)', transform: 'rotate(-1deg)' }}>
             <div className="absolute -top-3 left-1/2 w-16 h-6 bg-yellow-200/60 -translate-x-1/2"
@@ -220,7 +221,7 @@ export default function Home() {
      
 
         {/* Web Dev section */}
-        <section className="mb-20 ml-24 relative">
+        <section className="mb-20 ml-0 sm:ml-24 relative">
           <ScribbleUnderline delay={0.4} icon={
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
               <circle cx="14" cy="4" r="2.5" fill="#1a202c" />
@@ -247,7 +248,7 @@ export default function Home() {
           </div>
         </section>
    {/* Section divider */}
-   <motion.div className="my-16 flex items-center gap-4 ml-24"
+   <motion.div className="my-16 flex items-center gap-4 ml-0 sm:ml-24"
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}>
           <svg width="60" height="40" className="opacity-30 flex-shrink-0">
             <path d="M 5 20 L 25 20 L 25 10 L 45 30 L 25 30 L 25 20" stroke="#1a202c" strokeWidth="2" fill="none" />
@@ -258,7 +259,7 @@ export default function Home() {
         </motion.div>
 
         {/* Data Science section */}
-        <section className="mb-20 ml-24 relative">
+        <section className="mb-20 ml-0 sm:ml-24 relative">
           <ScribbleUnderline delay={0.2} icon={
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
               <path d="M 4 24 L 4 4 M 4 24 L 24 24" stroke="#1a202c" strokeWidth="1.5" strokeLinecap="round" />
@@ -285,7 +286,7 @@ export default function Home() {
 
         {/* Terminal footer */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} className="mt-32 ml-24">
+          viewport={{ once: true }} className="mt-32 ml-0 sm:ml-24">
           <div className="border-2 border-[#1a202c] p-4 font-mono text-xs"
             style={{ backgroundColor: '#000', color: '#0f0', boxShadow: '4px 4px 0px rgba(0,0,0,0.3)' }}>
             <div className="mb-1">
