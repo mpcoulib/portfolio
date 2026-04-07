@@ -109,6 +109,13 @@ export default function Home() {
               </svg>
               github ↗
             </a>
+            <a href="https://drive.google.com/file/d/15VcmhMAde-i03_uvnGI-OMua-fGVZbI7/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
+              style={{ border: '1.5px solid #f6c90e', color: '#f6c90e', backgroundColor: 'transparent' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#f6c90e'; (e.currentTarget as HTMLAnchorElement).style.color = '#1a202c' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = '#f6c90e' }}>
+              cv ↗
+            </a>
             <a href="https://massafolio.dev" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
               style={{ border: '1.5px solid #a8d96e', color: '#a8d96e', backgroundColor: 'transparent' }}
