@@ -7,6 +7,57 @@ import { KentePattern } from '@/components/KentePattern'
 import { AdinkraBackground } from '@/components/AdinkraBackground'
 
 // Main page here
+const mastersProjects = [
+  {
+    title: "OfferBloom — AI Interview Prep",
+    description: "Full-stack AI interview-prep platform (MIMS Capstone). React + Vite frontend, FastAPI backend, Neo4j graph model, Cloudflare R2 storage, Claude Haiku integration for answer drafting, verbal-practice feedback, and resume coaching.",
+    liveUrl: "https://offerbloom.vercel.app/",
+    techStack: ["React", "Vite", "FastAPI", "Neo4j", "Cloudflare R2", "Claude Haiku", "Python"],
+    highlights: [
+      "Designed Neo4j graph linking users, questions, answers, practices, and files",
+      "Seeded 320 role-specific interview questions across 8 roles and 8 categories",
+      "Integrated Claude Haiku for AI-assisted answer drafting and verbal-practice feedback",
+      "Built resume coaching flow with structured feedback on bullet quality"
+    ]
+  },
+  {
+    title: "Clinical Trial Navigator (CTN)",
+    description: "Knowledge-graph platform matching sickle-cell patients to eligible clinical trials. Berkeley INFO 290 / DEVENG 204 capstone — addressing the <5% enrollment rate across 250+ active trials.",
+    githubUrl: "https://github.com/mpcoulib",
+    liveUrl: "https://alluring-nourishment-production-34a5.up.railway.app/login/",
+    techStack: ["Python", "Django 4.2", "RDF/Turtle", "SPARQL", "SHACL", "rdflib", "Anthropic API", "Railway"],
+    highlights: [
+      "Designed RDF/Turtle data model + RDFS schema with inference; SHACL validation via pySHACL",
+      "Built SPARQL eligibility-matching engine over 250 ingested trials",
+      "Django web app with patient registry, trial browser, and live matching demo",
+      "Pitched $150K seed with TAM/SAM/SOM model targeting expansion to 5 countries"
+    ]
+  },
+  {
+    title: "The Sound of Power — UN Speeches NLP",
+    description: "ANLP final project. NLP pipeline analyzing rhetorical strategies across 2,069 UN Security Council transcripts using LDA, BERTopic, and transformer-based LLMs.",
+    githubUrl: "https://github.com/mpcoulib/Projects/tree/main/United%20Nation%20Speeches%20analysis",
+    paperUrl: "https://drive.google.com/file/d/1NhE_UUAA53kZ0gn7lzTQkJkYryJcRsy0/view",
+    techStack: ["Python", "BERTopic", "LDA", "Transformers", "spaCy", "Gensim"],
+    highlights: [
+      "Tested what drives linguistic variability in diplomatic speeches",
+      "Found resolution type outweighs country identity and bloc membership",
+      "Cleaned and normalized noisy OCR-extracted text from scanned UN documents"
+    ]
+  },
+  {
+    title: "Joke Generator",
+    description: "Front-end Web Architecture class project. React app fetching random jokes from an external API in a responsive interface.",
+    githubUrl: "https://github.com/mpcoulib/Front-end-project",
+    techStack: ["React", "CSS", "Joke API"],
+    highlights: [
+      "Integrated external Joke API with live fetching on button click",
+      "Built with modular, reusable React components",
+      "Fully responsive layout that adapts across device sizes"
+    ]
+  }
+]
+
 const dataScienceProjects = [
   {
     title: "Billboard Hit Prediction Tool",
@@ -29,21 +80,35 @@ const dataScienceProjects = [
       "Ran event-study analysis isolating pre/post announcement price reactions",
       "Aligned non-synchronous financial time series from multiple data sources"
     ]
-  },
-  {
-    title: "UN Speeches Analysis",
-    description: "Natural language processing analysis of United Nations speeches, extracting patterns, themes and insights from global diplomatic discourse.",
-    githubUrl: "https://github.com/mpcoulib/Projects/tree/main/United%20Nation%20Speeches%20analysis",
-    techStack: ["Python", "spaCy", "NLTK", "LDA", "Gensim", "Matplotlib"],
-    highlights: [
-      "Applied LDA topic modeling across decades of multilingual UN speech data",
-      "Tracked how geopolitical themes shifted over time by country and region",
-      "Cleaned and normalized noisy OCR-extracted text from scanned UN documents"
-    ]
   }
 ]
 
 const webDevProjects = [
+  {
+    title: "Ghana MMDA Budget Transparency",
+    description: "Architected and built end-to-end ETL pipeline ingesting 1,400+ municipal budget PDFs (2014–2026) across 261 Metropolitan, Municipal & District Assemblies — Ghana's first centralized fiscal transparency platform. Solo build on $51K budget.",
+    githubUrl: "https://www.publicaccountabilitylab.com/",
+    liveUrl: "https://www.publicaccountabilitylab.com/",
+    techStack: ["Python", "pdfplumber", "camelot", "PostgreSQL", "React", "AWS (RDS/S3/EC2)", "Azure Form Recognizer", "GPT APIs"],
+    highlights: [
+      "Format-aware parsing engine routing PDFs across 5 document generations (Old Composite Budget, PBB v1–v4)",
+      "Normalized PostgreSQL schema aligned to GFS/COFOG codebooks with currency + inflation adjustments",
+      "Validation + approval workflow (Draft → Submitted → Review → Approved → Published) with field-level audit trail",
+      "REST API + React dashboards for Budget Explorer, comparative analytics, dev-vs-recurrent splits",
+      "Azure Form Recognizer + GPT for OCR/extraction on low-quality scans"
+    ]
+  },
+  {
+    title: "Afya Health Information Systems",
+    description: "Co-founder & CTO. USSD-based EHR platform enabling clinics in low-resource settings to securely capture patient data offline and sync with national health systems when connectivity returns. Big Ideas Berkeley finalist.",
+    githubUrl: "https://github.com/mpcoulib",
+    techStack: ["USSD", "Python", "PostgreSQL", "Offline-first", "Health IT"],
+    highlights: [
+      "Selected as Big Ideas Berkeley finalist for transforming record-keeping in Sub-Saharan Africa",
+      "Designed offline-first sync architecture for intermittent connectivity",
+      "USSD interface targets clinics without smartphones or stable internet"
+    ]
+  },
   {
     title: "mibegnon-project",
     description: "Full-stack scholarship platform with authentication, user dashboard, and automated scholarship scraping — built with Next.js, TypeScript, and Prisma.",
@@ -57,17 +122,6 @@ const webDevProjects = [
     ]
   },
   {
-    title: "Joke Generator",
-    description: "A front-end React app that fetches random jokes from an external API and displays them in a fun, responsive interface.",
-    githubUrl: "https://github.com/mpcoulib/Front-end-project",
-    techStack: ["React", "CSS", "Joke API"],
-    highlights: [
-      "Integrated an external Joke API with live fetching on button click",
-      "Built with modular, reusable React components",
-      "Fully responsive layout that adapts across device sizes"
-    ]
-  },
-  {
     title: "HIMS — Friends Eye Center",
     description: "Built a Healthcare Information Management System for a clinic in Ghana on top of OpenEMR. Includes a data migration pipeline using Python and Pandas to move legacy Excel records into the new system.",
     githubUrl: "https://github.com/mpcoulib/Friends_Eye_Center_data_migration",
@@ -78,6 +132,56 @@ const webDevProjects = [
       "Replaced entirely paper-based workflows across three sites: patient records, billing, and appointments",
       "System still in use 2+ years later; trained KNUST and Technical University of Tamale students to maintain it post-handoff"
     ]
+  },
+  {
+    title: "Friends Eye Center — Public Website",
+    description: "Public-facing website for the FEC clinic in Kumasi, Ghana. Marketing, services, and contact for the eye center I previously digitized.",
+    githubUrl: "https://github.com/mpcoulib",
+    liveUrl: "https://fec-website-c64v.vercel.app/",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
+    highlights: [
+      "Designed and shipped a responsive marketing site for the same clinic I built the HMS for",
+      "Deployed on Vercel with continuous delivery",
+      "Companion piece to the OpenEMR-based HIMS — full lifecycle from clinical software to public web presence"
+    ]
+  }
+]
+
+const experience = [
+  {
+    role: "Data Intern",
+    org: "UC Berkeley · Coleman Fung Institute",
+    location: "Berkeley, USA",
+    period: "Sep 2024 – Present",
+    blurb: "7+ years of MEng student data, Salesforce + Qualtrics + PostgreSQL integration, Tableau dashboards for employment outcomes."
+  },
+  {
+    role: "Software Engineer",
+    org: "Public Accountability Lab",
+    location: "Remote · Ghana",
+    period: "2024 – 2025",
+    blurb: "Solo build of Ghana MMDA Budget Transparency platform on $51K — 1,400+ PDFs across 261 assemblies, AWS + Azure stack."
+  },
+  {
+    role: "Lead IT Consultant",
+    org: "Friends Eye Center Clinic",
+    location: "Kumasi, Ghana",
+    period: "May 2023 – Aug 2023",
+    blurb: "Shipped full HMS on open-source stack, LAN-based offline sync, trained 37 staff. Doubled clinic revenue."
+  },
+  {
+    role: "IT Consultant",
+    org: "Pittsburgh Lutheran United Ministries (CMU)",
+    location: "Pittsburgh, USA",
+    period: "Jan 2023 – May 2023",
+    blurb: "IT audits across 8 churches; designed 5 data collection tools consolidating 2,000+ records."
+  },
+  {
+    role: "Data Management Intern",
+    org: "HEC Paris",
+    location: "Doha, Qatar",
+    period: "Oct 2021 – Apr 2022",
+    blurb: "R + Excel analysis on 1,100+ alumni records; led QA/UX testing for a new platform pre-launch."
   }
 ]
 
@@ -227,6 +331,45 @@ export default function Home() {
 
      
 
+        {/* Master's Projects section */}
+        <section className="mb-20 ml-0 sm:ml-24 relative">
+          <ScribbleUnderline delay={0.3} icon={
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
+              <path d="M 4 10 L 14 5 L 24 10 L 14 15 Z" stroke="#1a202c" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
+              <path d="M 8 12 L 8 18 Q 14 22, 20 18 L 20 12" stroke="#1a202c" strokeWidth="1.5" fill="none" />
+              <path d="M 24 10 L 24 16" stroke="#a8d96e" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="24" cy="17.5" r="1.2" fill="#a8d96e" />
+            </svg>
+          }>Master&apos;s Projects</ScribbleUnderline>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="absolute -left-16 mt-2 text-xs text-gray-400 font-mono transform -rotate-90 origin-left">
+            // BERKELEY
+          </motion.div>
+          <p className="text-xs text-gray-500 font-mono mb-6 pl-1">
+            MIMS &apos;26 — capstones, course projects, and applied research
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {mastersProjects.map((project, index) => (
+              <SketchBox key={index} title={project.title} description={project.description}
+                githubUrl={(project as { githubUrl?: string }).githubUrl}
+                liveUrl={(project as { liveUrl?: string }).liveUrl}
+                paperUrl={(project as { paperUrl?: string }).paperUrl}
+                techStack={project.techStack} highlights={project.highlights} delay={0.1 * index} />
+            ))}
+          </div>
+        </section>
+
+        {/* Section divider */}
+        <motion.div className="my-16 flex items-center gap-4 ml-0 sm:ml-24"
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}>
+          <svg width="60" height="40" className="opacity-30 flex-shrink-0">
+            <path d="M 5 20 L 25 20 L 25 10 L 45 30 L 25 30 L 25 20" stroke="#1a202c" strokeWidth="2" fill="none" />
+          </svg>
+          <div className="flex-1 h-0.5" style={{
+            background: 'repeating-linear-gradient(90deg, #999 0px, #999 8px, transparent 8px, transparent 16px)'
+          }} />
+        </motion.div>
+
         {/* Web Dev section */}
         <section className="mb-20 ml-0 sm:ml-24 relative">
           <ScribbleUnderline delay={0.4} icon={
@@ -288,6 +431,66 @@ export default function Home() {
                 githubUrl={project.githubUrl} techStack={project.techStack}
                 highlights={project.highlights} delay={0.1 * index} />
             ))}
+          </div>
+        </section>
+
+        {/* Section divider */}
+        <motion.div className="my-16 flex items-center gap-4 ml-0 sm:ml-24"
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}>
+          <svg width="60" height="40" className="opacity-30 flex-shrink-0">
+            <path d="M 5 20 L 25 20 L 25 10 L 45 30 L 25 30 L 25 20" stroke="#1a202c" strokeWidth="2" fill="none" />
+          </svg>
+          <div className="flex-1 h-0.5" style={{
+            background: 'repeating-linear-gradient(90deg, #999 0px, #999 8px, transparent 8px, transparent 16px)'
+          }} />
+        </motion.div>
+
+        {/* Experience timeline */}
+        <section className="mb-20 ml-0 sm:ml-24 relative">
+          <ScribbleUnderline delay={0.2} icon={
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-75">
+              <circle cx="14" cy="14" r="10" stroke="#1a202c" strokeWidth="1.5" fill="none" />
+              <path d="M 14 8 L 14 14 L 18 17" stroke="#1a202c" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+              <circle cx="14" cy="14" r="1.3" fill="#a8d96e" />
+            </svg>
+          }>Experience</ScribbleUnderline>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="absolute -left-16 mt-2 text-xs text-gray-400 font-mono transform -rotate-90 origin-left">
+            // TIMELINE
+          </motion.div>
+          <div className="relative pl-6 sm:pl-8">
+            {/* Vertical dashed line */}
+            <div className="absolute left-1 sm:left-2 top-2 bottom-2 w-0.5"
+              style={{ background: 'repeating-linear-gradient(to bottom, #1a202c 0px, #1a202c 4px, transparent 4px, transparent 8px)', opacity: 0.4 }} />
+            <div className="space-y-6">
+              {experience.map((job, i) => (
+                <motion.div key={i}
+                  initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 * i }}
+                  className="relative">
+                  {/* Dot on timeline */}
+                  <div className="absolute -left-6 sm:-left-8 top-1.5"
+                    style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: '#f5f5f0', border: '2px solid #1a202c' }}>
+                    <div className="absolute inset-1" style={{ backgroundColor: '#a8d96e', borderRadius: '50%' }} />
+                  </div>
+                  <div className="bg-white/40 p-4"
+                    style={{ border: '1.5px solid rgba(26,32,44,0.6)', boxShadow: '3px 3px 0px rgba(26,32,44,0.1)' }}>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                      <div>
+                        <span className="font-mono text-sm font-bold" style={{ color: '#1a202c' }}>{job.role}</span>
+                        <span className="font-mono text-xs text-gray-500"> @ </span>
+                        <span className="font-mono text-sm" style={{ color: '#1a202c' }}>{job.org}</span>
+                      </div>
+                      <span className="font-mono text-xs text-gray-500">{job.period}</span>
+                    </div>
+                    <p className="text-xs text-gray-400 font-mono mb-2">{job.location}</p>
+                    <p className="text-sm text-gray-700 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                      {job.blurb}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

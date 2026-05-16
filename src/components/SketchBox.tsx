@@ -5,8 +5,9 @@ import { useState } from 'react'
 interface SketchBoxProps {
   title: string
   description: string
-  githubUrl: string
+  githubUrl?: string
   liveUrl?: string
+  paperUrl?: string
   techStack?: string[]
   highlights?: string[]
   delay?: number
@@ -60,7 +61,7 @@ function getShapeIndex(title: string): number {
   return Math.abs(hash) % boxShapes.length
 }
 
-export function SketchBox({ title, description, githubUrl, liveUrl, techStack, highlights, delay = 0 }: SketchBoxProps) {
+export function SketchBox({ title, description, githubUrl, liveUrl, paperUrl, techStack, highlights, delay = 0 }: SketchBoxProps) {
   const [isHovered, setIsHovered] = useState(false)
   const boxStyle = boxShapes[getShapeIndex(title)]
 
@@ -105,28 +106,46 @@ export function SketchBox({ title, description, githubUrl, liveUrl, techStack, h
             </h3>
           </div>
           <div className="flex items-center gap-2 pl-4 flex-wrap">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
-              style={{
-                border: '1.5px solid #1a202c',
-                color: '#1a202c',
-                backgroundColor: 'transparent',
-                fontFamily: 'Courier New, monospace',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#1a202c'
-                ;(e.currentTarget as HTMLAnchorElement).style.color = '#f5f5f0'
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent'
-                ;(e.currentTarget as HTMLAnchorElement).style.color = '#1a202c'
-              }}
-            >
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M 7 1 C 3.7 1 1 3.7 1 7 C 1 9.6 2.7 11.9 5.1 12.7 C 5.4 12.8 5.5 12.6 5.5 12.4 L 5.5 11.3 C 3.9 11.6 3.5 10.5 3.5 10.5 C 3.2 9.8 2.8 9.6 2.8 9.6 C 2.2 9.2 2.8 9.2 2.8 9.2 C 3.4 9.3 3.8 9.8 3.8 9.8 C 4.4 10.8 5.4 10.5 5.7 10.3 C 5.8 9.9 5.9 9.6 6.1 9.5 C 4.4 9.3 2.6 8.6 2.6 5.7 C 2.6 4.9 2.9 4.3 3.3 3.8 C 3.3 3.6 3 2.9 3.5 2 C 3.5 2 4.1 1.8 5.5 2.7 C 6.1 2.5 6.8 2.4 7.5 2.4 C 8.2 2.4 8.9 2.5 9.5 2.7 C 10.9 1.8 11.5 2 11.5 2 C 12 2.9 11.7 3.6 11.7 3.8 C 12.1 4.3 12.4 4.9 12.4 5.7 C 12.4 8.6 10.6 9.3 8.9 9.5 C 9.1 9.7 9.3 10.1 9.3 10.7 L 9.3 12.4 C 9.3 12.6 9.4 12.8 9.7 12.7 C 12.1 11.9 13.8 9.6 13.8 7 C 14 3.7 11.3 1 7 1 Z" fill="currentColor"/>
-              </svg>
-              github ↗
-            </a>
+            {githubUrl ? (
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
+                style={{
+                  border: '1.5px solid #1a202c',
+                  color: '#1a202c',
+                  backgroundColor: 'transparent',
+                  fontFamily: 'Courier New, monospace',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#1a202c'
+                  ;(e.currentTarget as HTMLAnchorElement).style.color = '#f5f5f0'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent'
+                  ;(e.currentTarget as HTMLAnchorElement).style.color = '#1a202c'
+                }}
+              >
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path d="M 7 1 C 3.7 1 1 3.7 1 7 C 1 9.6 2.7 11.9 5.1 12.7 C 5.4 12.8 5.5 12.6 5.5 12.4 L 5.5 11.3 C 3.9 11.6 3.5 10.5 3.5 10.5 C 3.2 9.8 2.8 9.6 2.8 9.6 C 2.2 9.2 2.8 9.2 2.8 9.2 C 3.4 9.3 3.8 9.8 3.8 9.8 C 4.4 10.8 5.4 10.5 5.7 10.3 C 5.8 9.9 5.9 9.6 6.1 9.5 C 4.4 9.3 2.6 8.6 2.6 5.7 C 2.6 4.9 2.9 4.3 3.3 3.8 C 3.3 3.6 3 2.9 3.5 2 C 3.5 2 4.1 1.8 5.5 2.7 C 6.1 2.5 6.8 2.4 7.5 2.4 C 8.2 2.4 8.9 2.5 9.5 2.7 C 10.9 1.8 11.5 2 11.5 2 C 12 2.9 11.7 3.6 11.7 3.8 C 12.1 4.3 12.4 4.9 12.4 5.7 C 12.4 8.6 10.6 9.3 8.9 9.5 C 9.1 9.7 9.3 10.1 9.3 10.7 L 9.3 12.4 C 9.3 12.6 9.4 12.8 9.7 12.7 C 12.1 11.9 13.8 9.6 13.8 7 C 14 3.7 11.3 1 7 1 Z" fill="currentColor"/>
+                </svg>
+                github ↗
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold"
+                style={{
+                  border: '1.5px dashed rgba(26,32,44,0.4)',
+                  color: 'rgba(26,32,44,0.55)',
+                  backgroundColor: 'transparent',
+                  fontFamily: 'Courier New, monospace',
+                }}
+                title="Source not public"
+              >
+                <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+                  <rect x="3" y="7" width="8" height="6" rx="1" stroke="currentColor" strokeWidth="1.4" fill="none" />
+                  <path d="M 5 7 L 5 5 Q 5 3, 7 3 Q 9 3, 9 5 L 9 7" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+                </svg>
+                private
+              </span>
+            )}
             {liveUrl && (
               <a href={liveUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
@@ -144,6 +163,25 @@ export function SketchBox({ title, description, githubUrl, liveUrl, techStack, h
                 }}
               >
                 live ↗
+              </a>
+            )}
+            {paperUrl && (
+              <a href={paperUrl} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-bold transition-all"
+                style={{
+                  border: '1.5px solid #f6c90e',
+                  color: '#1a202c',
+                  backgroundColor: 'rgba(246,201,14,0.2)',
+                  fontFamily: 'Courier New, monospace',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#f6c90e'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(246,201,14,0.2)'
+                }}
+              >
+                paper ↗
               </a>
             )}
           </div>
